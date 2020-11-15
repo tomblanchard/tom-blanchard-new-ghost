@@ -1,0 +1,15 @@
+<ul class="grid-bar--up-3 large--text-right margin-bottom--none">
+  {{#foreach navigation}}
+    <li class="grid-item">
+      <a class="text-color-inherit font-size--down-2 line-height--up-4 font-weight-600 text-caps" href="{{@site.url}}#{{slug}}">
+        {{label}}
+      </a>
+    </li>
+  {{/foreach}}
+
+  <li class="grid-item">
+    <div class="container-padding padding-left--none large--padding--none">
+      {{> 'social-links'}}
+    </div>
+  </li>
+</ul>

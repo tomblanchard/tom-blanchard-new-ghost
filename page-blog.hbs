@@ -1,0 +1,53 @@
+{{!< default}}
+
+{{#post}}
+  <h1 class="invisible">
+    {{title}}
+  </h1>
+{{/post}}
+
+{{#get 'posts' limit=@config.posts_per_page}}
+  <div class="padding-top-bottom--up-3 large--padding-top-bottom--up-7">
+    <div class="container-default">
+      <div class="overflow-hidden">
+        <div style="padding-right: 25px; padding-bottom: 25px;">
+          <ul class="flex--up-6 flex-wrap margin-bottom-negative--up-4 large--margin-bottom-negative--up-6 margin-bottom--none">
+            {{#foreach posts}}
+              <li class="flex-item-shrink flex padding-bottom--up-4 large--padding-bottom--up-6 one xlarge--one-two">
+                <article class="flex-item flex">
+                  <div class="flex-item flex text-color-definitions-3" style="box-shadow: 25px 25px;">
+                    <div class="flex-item box-color-definitions-1 text-color-definitions-2">
+                      <div class="padding--up-3">
+                        <header class="margin-bottom--down-1 large--margin-bottom--up-1">
+                          <a class="text-color-inherit" href="{{url}}">
+                            <div class="flex-vertical-reverse">
+                              <h2 class="font-size--up-6 line-height--up-10 large--font-size--up-10 large--line-height--up-14  text-color-definitions-3 margin-bottom--none">
+                                {{title}}
+                              </h2>
+
+                              <div class="margin-bottom--down-1">
+                                <div class="font-size--0 large--font-size--up-4 large--line-height--up-10 text-color-definitions-4">
+                                  <time datetime="{{date format="YYYY-MM-DD"}}">
+                                    {{date format="D MMM YYYY"}}
+                                  </time>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </header>
+
+                        <p class="font-size--down-2 line-height--up-4 large--font-size--0 large--line-height--up-6 margin-bottom--none">
+                          {{excerpt words='40'}}&hellip;
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </li>
+            {{/foreach}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/get}}

@@ -1,0 +1,24 @@
+{
+  "name": "tom-blanchard-new",
+  "version": "1.0.0",
+  "engines": {
+    "ghost": ">=3.0.0",
+    "ghost-api": "v3"
+  },
+  "scripts": {
+    "start": "gulp"
+  },
+  "devDependencies": {
+    "@tuanpham-dev/gulp-liquidjs": "0.0.8",
+    "browser-sync": "^2.26.13",
+    "gulp": "^4.0.2",
+    "gulp-data": "^1.3.1",
+    "gulp-purgecss": "^3.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^4.14.1"
+  },
+  "config": {
+    "posts_per_page": 9999
+  }
+}

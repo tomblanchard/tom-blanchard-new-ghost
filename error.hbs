@@ -1,0 +1,52 @@
+{{!< default}}
+
+<div class="padding-top-bottom--up-3 large--padding-top-bottom--up-7">
+  <div class="container-default">
+    <article class="box-center" style="max-width: 875px;">
+      <header class="margin-bottom--down-1 large--margin-bottom--up-1">
+        <div class="flex-vertical-reverse">
+          <h1 class="font-size--up-6 line-height--up-10 large--font-size--up-10 large--line-height--up-14 text-color-definitions-3 margin-bottom--none">
+            {{statusCode}} - {{message}}
+          </h1>
+        </div>
+      </header>
+
+      <div class="margin-bottom--up-3">
+        <a class="button-primary" href="{{@site.url}}">
+          <div class="flex-bar--down-3">
+            <div class="flex-item-shrink">
+              Go back to the home page
+            </div>
+
+            <div class="flex-item-shrink">
+              <div class="font-size--down-4 large--font-size--down-2 line-height--none">
+                {{> 'svg-arrow-right'}}
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      {{#if errorDetails}}
+        <div class="rte">
+          <h2>
+            Errors
+          </h2>
+
+          <ul>
+            {{#foreach errorDetails}}
+              <li>
+                Rule: {{rule}}<br />
+
+                {{#foreach failures}}
+                  Ref: {{ref}}<br />
+                  Message: {{message}}
+                {{/foreach}}
+              </li>
+            {{/foreach}}
+          </ul>
+        </div>
+      {{/if}}
+    </article>
+  </div>
+</div>
