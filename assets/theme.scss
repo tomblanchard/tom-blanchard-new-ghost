@@ -895,7 +895,8 @@ $button-border-radius: $border-radius-default;
       hr,
       table,
       iframe,
-      pre {
+      pre,
+      figure {
         font: inherit;
         margin-bottom: var(--spacing--up-3);
       }
