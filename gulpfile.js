@@ -39,15 +39,15 @@ function build_liquid() {
 };
 
 function build_sass() {
-  return src('./src/assets/*.scss')
+  return src('./assets/*.scss')
     .pipe(sass({
       outputStyle: 'compressed'
     }).on('error', sass.logError))
     .pipe(purgecss({
-      content: ['./src/**/*.liquid']
+      content: ['./**/*.hbs']
     }))
     .pipe(rename('theme.min.css'))
-    .pipe(dest('./dist/assets'))
+    .pipe(dest('./assets'))
     .pipe(server.stream());
 };
 
@@ -73,7 +73,7 @@ function copy_assets() {
 
 function watch_all() {
   watch('./src/*/**.liquid', series(build_liquid, reload));
-  watch(['./src/assets/*.scss', './src/*/**.liquid'], build_sass);
+  watch(['./assets/*.scss', './*/**.hbs'], build_sass);
   watch('./src/assets/*', copy_assets);
 };
 

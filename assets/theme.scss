@@ -86,7 +86,7 @@
   --colors-text-input-background: var(--colors-definitions-2);
   --colors-text-input-border: var(--colors-definitions-1);
 
-  --misc-transitions-easing: 0s;
+  --misc-transitions-easing: .2s;
   --misc-border-radius: 0;
 }
 
@@ -1677,6 +1677,44 @@ $button-border-radius: $border-radius-default;
     }
   }
 /*! purgecss end ignore */
+
+/*============================================================================
+  #Opacity helpers
+==============================================================================*/
+
+@mixin misc-helpers($breakpoint: "") {
+  .#{$breakpoint}opacity-70 {
+    opacity: .7;
+  }
+
+  .#{$breakpoint}opacity-100,
+  .#{$breakpoint}hover-opacity-100:hover {
+    opacity: 1;
+  }
+
+  .#{$breakpoint}aspect-square {
+    aspect-ratio: 1;
+  }
+
+  .#{$breakpoint}aspect-auto {
+    aspect-ratio: auto;
+  }
+
+  .#{$breakpoint}object-cover {
+    object-fit: cover;
+  }
+}
+
+@include misc-helpers();
+
+@each $breakpoint in $breakpoints {
+  $keyword: nth($breakpoint, 1);
+  $media-query: nth($breakpoint, 2);
+
+  @media only screen and #{$media-query} {
+    @include misc-helpers("#{$keyword}--");
+  }
+}
 
 /*============================================================================
   #Modular scale helpers
