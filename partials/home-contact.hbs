@@ -26,22 +26,95 @@
               projects which excite me and challenge my skill set, as I thrive on
               learning new things. Feel free to get in touch and tell me as much
               information as possible about your project and we'll be able to
-              get the ball rolling.
+              get the ball rolling.<br />
+              <br />
+              Email:
+
+              <a class="text-color-definitions-3 text-underline" href="#">
+                9ce5f3dce8f3f1fef0fdf2fff4fdeef8b2fff3b2e9f7
+              </a>
+
+              <script>
+                (() => {
+                  var currentScript = document.currentScript;
+
+                  document.addEventListener('DOMContentLoaded', () => {
+                    updateAnchor(currentScript.previousElementSibling);
+                  });
+
+                  function updateAnchor(el) {
+                    var encoded = el.innerHTML.trim();
+                    var decoded = decodeEmail(encoded);
+
+                    el.textContent = decoded;
+                    el.href = 'mailto:' + decoded;
+                  };
+
+                  function decodeEmail(encodedString) {
+                    var email = '';
+                    var keyInHex = encodedString.substr(0, 2);
+                    var key = parseInt(keyInHex, 16);
+
+                    for (var n = 2; n < encodedString.length; n += 2) {
+                      var charInHex = encodedString.substr(n, 2)
+                      var char = parseInt(charInHex, 16);
+                      var output = char ^ key;
+
+                      email += String.fromCharCode(output);
+                    }
+
+                    return email;
+                  };
+                })();
+              </script>
             </p>
 
-            <a class="button-primary" href="mailto:yo@tomblanchard.co.uk">
-              <div class="flex-bar--down-3">
-                <div class="flex-item-shrink">
-                  Contact
-                </div>
+            <form
+              class="flex--0 large--flex--up-2 flex-wrap"
+              action="https://api.web3forms.com/submit"
+              method="post"
+              target="_blank"
+            >
+              <input type="hidden" name="access_key" value="b6c528e9-b639-45bc-90e3-3952a2c1f1be">
+              <input type="checkbox" name="botcheck" id="" style="display: none;">
 
-                <div class="flex-item-shrink">
-                  <div class="font-size--down-4 large--font-size--down-2 line-height--none">
-                    {{> 'svg-arrow-right'}}
-                  </div>
-                </div>
+              <div class="flex-item-shrink one large--one-two margin-bottom--0 large--margin-bottom--up-2">
+                <label class="visually-hidden" for="contact-form-name">
+                  Name
+                </label>
+
+                <input class="input block" id="contact-form-name" type="text" name="name" placeholder="Name" required>
               </div>
-            </a>
+
+              <div class="flex-item-shrink one large--one-two margin-bottom--0 large--margin-bottom--up-2">
+                <label class="visually-hidden" for="contact-form-email">
+                  Email
+                </label>
+
+                <input class="input block" id="contact-form-email" type="email" name="email" placeholder="Email" required>
+              </div>
+
+              <div class="flex-item-shrink one margin-bottom--0 large--margin-bottom--up-2">
+                <label class="visually-hidden" for="contact-form-message">
+                  Message
+                </label>
+
+                <textarea
+                  class="input block"
+                  id="contact-form-message"
+                  name="message"
+                  placeholder="Message"
+                  rows="6"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="flex-item-shrink">
+                <button class="button-primary" type="submit">
+                  Let's Chat
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
