@@ -5,6 +5,7 @@
         <div class="large--flex-item-shrink large--four-eleven margin-bottom--up-2 large--margin-bottom--none">
           <div class="image-container">
             <img
+              class="aspect-square object-cover large--aspect-auto"
               src="{{asset 'contact.jpg'}}"
               alt="My schedule, I wish it was this empty in real life." />
           </div>
@@ -69,12 +70,7 @@
               </script>
             </p>
 
-            <form
-              class="flex--0 large--flex--up-2 flex-wrap"
-              action="https://api.web3forms.com/submit"
-              method="post"
-              target="_blank"
-            >
+            <form class="flex--0 large--flex--up-2 flex-wrap" action="https://api.web3forms.com/submit" method="post">
               <input type="hidden" name="access_key" value="b6c528e9-b639-45bc-90e3-3952a2c1f1be">
               <input type="checkbox" name="botcheck" id="" style="display: none;">
 
