@@ -767,7 +767,7 @@ $button-border-radius: $border-radius-default;
       line-height: var(--typography-base-line-height);
     }
 
-    a {
+    a, button {
       transition: var(--misc-transitions-easing);
       color: var(--colors-base-links);
 
