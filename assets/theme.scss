@@ -1655,7 +1655,7 @@ $button-border-radius: $border-radius-default;
 
 @mixin breakpoint-inline-styles($breakpoint: "") {
   $properties: (
-    width, height, font-size, max-width
+    width, height, font-size, max-width, aspect-ratio
   );
 
   @each $property in $properties {
