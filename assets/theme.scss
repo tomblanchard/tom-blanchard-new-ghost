@@ -2197,3 +2197,6 @@ $button-border-radius: $border-radius-default;
     @include border-helpers("#{$keyword}--");
   }
 }
+
+// Koenig editor wide/full image cards (required by Ghost)
+.kg-width-wide{position:relative;width:85vw;min-width:100%;margin-left:calc(50% - 50vw);transform:translateX(calc(50vw - 50%))}.kg-width-full{position:relative;width:100vw;margin-left:calc(50% - 50vw)}.kg-width-wide img,.kg-width-full img{width:100%;height:auto}
